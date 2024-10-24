@@ -1,0 +1,76 @@
+---
+import SectionContainer from '@components/SectionContainer.astro';
+import Search from "@icons/Search.astro";
+
+const SHORTCUTS = [
+  {
+    label: "🌱  Sin experiencia",
+    href: "https://www.infojobs.net/jobsearch/search-results/list.xhtml?keyword=&segmentId=&page=1&sortBy=PUBLICATION_DATE&onlyForeignCountry=false&countryIds=17&sinceDate=ANY&experienceMin=_0_YEARS&experienceMax=_0_YEARS",
+  },
+  {
+    label: "🗓️  Findes",
+    href: "https://www.infojobs.net/ofertas-trabajo/fines-de-semana",
+  },
+  {
+    label: "🕒  Media jornada",
+    href: "https://www.infojobs.net/ofertas-trabajo/media-jornada",
+  },
+  {
+    label: "💼  Prácticas",
+    href: "https://www.infojobs.net/ofertas-trabajo/practicas",
+  },
+] as const
+
+---
+
+<SectionContainer class="bg-hero-pattern rounded-3xl px-4 py-6">
+        <h1 class="text-black/80 font-semibold tracking-[0.35px] text-2xl text-center pb-4">
+            Tu carrera empieza aquí
+        </h1>
+        <search class="bg-white rounded-3xl p-4">
+            <form action="">
+                <div>
+                    <select class="w-full py-4 border-b border-gray-300 text-gray-600">
+                        <option value="" disabled selected>Nivel de estudio</option>
+                        <option value="1">Bachiller</option>
+                        <option value="2">Universitario</option>
+                        <option value="3">Maestria</option>
+                    </select>
+                </div>
+                <div class="mb-8">
+                    <input 
+                        class="w-full py-4 text-gray-600"
+                        placeholder="Estudio, puesto, empresa..." 
+                    />
+                </div>
+                <div>
+                    <input 
+                        class="w-full py-4 border-b border-gray-300 text-gray-600"
+                        placeholder="Provincia o población" 
+                    />
+                </div>
+                <button class="text-lg font-medium bg-accent hover:saturate-150 transition text-white rounded-full px-4 py-2 mt-4 inline-flex gap-x-2 justify-center items-center w-full"
+                >
+                    <Search />
+                    Buscar ofertas
+                </button>
+            </form>
+        </search>
+
+        <footer>
+            <h5 class="text-center pt-8 pb-4">Explora trabajos que se adaptan a ti</h5>
+            <div class="flex flex-wrap gap-4 justify-around lg:justify-center">
+            {
+                SHORTCUTS.map(({ label, href }) => (
+                <a
+                    class="bg-white rounded-full p-4 lg:px-6 shadow-sm text-primary transition hover:scale-105 hover:text-white hover:bg-primary"
+                    href={href}
+                >
+                    {label}
+                </a>
+                ))
+            }
+            </div>
+        </footer>
+
+</SectionContainer>
