@@ -1,14 +1,11 @@
+--- 
+import Button from "./ui/Button.astro"
+---
 
-<header class="flex max-w-[1440px] mx-auto p-8 justify-between items-center">
-    <img 
-        class="w-auto h-[30px]" 
-        src="/logo.svg" 
-        alt="Logo de InfoJobs"
-    >
-    <a  
-        class="text-lg font-medium bg-primary hover:saturate-200 transition text-white rounded-full px-4 py-2"
-        href="https://www.infojobs.net/candidate/candidate-login/candidate-login.xhtml"
-    >
-        Crea tu cuenta
-    </a>
+<header class="py-6 px-8 flex justify-between items-center md:max-w-[1400px] md:mx-auto">
+  <img src="/logo.svg" alt="Logo InfoJobs" class="w-auto h-[30px]" />
+
+  <Button variant="solid" color="primary" size="lg" radius="full" as="link" href="https://www.infojobs.net/candidate/candidate-login/candidate-login.xhtml">
+    Crea tu cuenta
+  </Button>
 </header>
